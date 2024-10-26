@@ -4,6 +4,7 @@ import { IoMdBookmark } from "react-icons/io";
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
   const {
     title,
+    id,
     cover,
     reading_time,
     author_img,
@@ -48,7 +49,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
         ))}
       </p>
       <button
-        onClick={() => handleMarkAsRead(reading_time)}
+        onClick={() => handleMarkAsRead(id, reading_time)}
         className="text-blue-700 underline font-bold"
       >
         Mark As Read

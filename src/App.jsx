@@ -16,13 +16,18 @@ function App() {
     setBooksmarks(newBookmarks);
   };
 
-  const handleMarkAsRead = (time) => {
+  const handleMarkAsRead = (id,time) => {
     console.log('marking as read',time)
 
-    // const newReadingTime = readingTime + time
-    // setReadingTime(newReadingTime)
+    const newReadingTime = readingTime + time
+    setReadingTime(newReadingTime)
     // OR shortcut
-    setReadingTime(readingTime + time);
+    // setReadingTime(readingTime + time);
+
+    
+    // console.log('remove bookmark', id)
+    const remainingBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
+    setBooksmarks(remainingBookmarks);
   };
 
   return (
